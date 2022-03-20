@@ -103,13 +103,14 @@ int main(int argc, char **argv)
 	p9.acc << 0, 0, 0;
 	p9.yaw = 0;
 
-	path.push_back(segments(p1, p2, 3));
-	path.push_back(segments(p2, p3, 2));
-	path.push_back(segments(p3, p4, 2));
-	path.push_back(segments(p4, p5, 2));
-	path.push_back(segments(p5, p6, 2));
-	path.push_back(segments(p6, p7, 2));
-	path.push_back(segments(p7, p8, 3));
+	path.push_back(segments(p1, p2, 2));
+	path.push_back(segments(p2, p3, 1));
+	path.push_back(segments(p3, p4, 1));
+	path.push_back(segments(p4, p5, 1));
+	path.push_back(segments(p5, p6, 1));
+	path.push_back(segments(p6, p7, 1));
+	path.push_back(segments(p7, p8, 2));
+
 	data = plan.get_profile(path, path.size(), sample);
 
 	desired_pose.pose.position.x = 0.0;

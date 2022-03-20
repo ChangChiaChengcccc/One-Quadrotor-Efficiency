@@ -141,10 +141,14 @@ void LeePositionController::ComputeDesiredMoment(const Eigen::Vector3d& force_co
 	// Get the desired rotation matrix.
 	// b_1_d is the time derivative of desired trajectory
 	Eigen::Vector3d b1_des;
-	double yaw = atan2(  command_trajectory_.velocity_W(1),command_trajectory_.velocity_W(0) );
-	if(yaw <0 ) {
-		yaw+=6.28;
-	}
+
+	// without self-rotation
+	double yaw = 0; //3.1415926/2;
+	//self-rotation
+	// double yaw = atan2(  command_trajectory_.velocity_W(1),command_trajectory_.velocity_W(0) );
+	// if(yaw <0 ) {
+	// 	yaw+=6.28;
+	// }
 
 	/*double yaw = command_trajectory_.getYaw();*/
 	b1_des << cos(yaw), sin(yaw), 0;

@@ -1,0 +1,3 @@
+*.vscode/
+rotors_simulator/rotors_gazebo/scripts/__pycache__/
+

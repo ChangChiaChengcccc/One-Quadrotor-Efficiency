@@ -1,0 +1,9 @@
+from sensor
+/iris1/ground_truth/odometry/pose/pose/position/x
+
+/iris1/acc/data[0]
+
+/debug/data[0]
+
+from estimation
+/estimated_state/data[0]
